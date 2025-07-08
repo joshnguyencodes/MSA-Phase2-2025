@@ -1,0 +1,6 @@
+@Hoang_Nguyen_MSA_Phase_2_2025_HostAddress = http://localhost:5118
+
+GET {{Hoang_Nguyen_MSA_Phase_2_2025_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
