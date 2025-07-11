@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V6tW25lWsrg=",
+  "dgSpecHash": "hqf2HhWFLoU=",
   "success": true,
-  "projectFilePath": "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/Hoang_Nguyen_MSA_Phase_2_2025.csproj",
+  "projectFilePath": "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/backend/networkingapp.api/networkingapp.api.csproj",
   "expectedPackageFiles": [
     "/Users/nmjos/.nuget/packages/microsoft.aspnetcore.openapi/9.0.0/microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
     "/Users/nmjos/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"

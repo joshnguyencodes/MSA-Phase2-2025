@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/Hoang_Nguyen_MSA_Phase_2_2025.csproj": {}
+    "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/backend/networkingapp.api/networkingapp.api.csproj": {}
   },
   "projects": {
-    "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/Hoang_Nguyen_MSA_Phase_2_2025.csproj": {
+    "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/backend/networkingapp.api/networkingapp.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/Hoang_Nguyen_MSA_Phase_2_2025.csproj",
-        "projectName": "Hoang_Nguyen_MSA_Phase_2_2025",
-        "projectPath": "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/Hoang_Nguyen_MSA_Phase_2_2025.csproj",
+        "projectUniqueName": "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/backend/networkingapp.api/networkingapp.api.csproj",
+        "projectName": "networkingapp.api",
+        "projectPath": "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/backend/networkingapp.api/networkingapp.api.csproj",
         "packagesPath": "/Users/nmjos/.nuget/packages/",
-        "outputPath": "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/obj/",
+        "outputPath": "/Users/nmjos/Documents/Microsoft Student Accelerator/Hoang_Nguyen_MSA_Phase_2_2025/backend/networkingapp.api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nmjos/.nuget/NuGet/NuGet.Config"
