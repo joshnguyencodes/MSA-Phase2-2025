@@ -1,4 +1,6 @@
-using bulkbuy.api.data;
+
+using bulkbuy.api.Data;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
 
