@@ -3,3 +3,4 @@ plan/
 prompt/
 spec/
 node_modules/
+.env
