@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "+2aoif4l3mXF88ON5I9v72EPmccakGyDov6w/UQ1mzg=",
+  "Source": "networkingapp.api",
+  "BasePath": "_content/networkingapp.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

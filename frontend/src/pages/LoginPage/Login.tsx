@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import './Login.css';
 
 const Login = () => {
-  const [email, setEmail] = useState<string>('');
+  const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault(); // prevent default page reload as so that javascript is used to process form submission
     setError('');
 
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch('api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       });
 
       if (!response.ok) {
@@ -36,8 +36,8 @@ const Login = () => {
         <input
           type="email"
           id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
 
