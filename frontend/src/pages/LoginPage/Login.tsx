@@ -32,10 +32,10 @@ const Login = () => {
     <div className="login-container">
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="username">Username:</label>
         <input
-          type="email"
-          id="email"
+          type="username"
+          id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required

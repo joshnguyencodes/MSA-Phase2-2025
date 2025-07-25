@@ -37,5 +37,11 @@ namespace bulkbuy.api.Controllers
             }
             return Ok(new { Token = result.Token });
         }
+
+        [HttpGet("test")]
+        public IActionResult Test()
+        {
+            return Ok("test");
+        }
     }
 }
