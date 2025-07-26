@@ -12,11 +12,11 @@ namespace bulkbuy.api.Models
         [Required]
         public required string Description { get; set; }
 
-        public datetime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         // Many to One relationships with User
         [Required]
-        public User OwnerID { get; set; }
+        public int OwnerID { get; set; }
 
         [ForeignKey("OwnerId")]
         public User Owner { get; set; }
@@ -24,7 +24,7 @@ namespace bulkbuy.api.Models
         // One to Many relationship with Orders
         public ICollection<Order> Orders { get; set; } = new List<Order>();
 
-        // One to Many relationship with members
+        // Many to Many relationship with group members
         public Icollection<GroupMember> Members { get; set; } = new List<GroupMember>();
 
         // Default Constructor for EF core
