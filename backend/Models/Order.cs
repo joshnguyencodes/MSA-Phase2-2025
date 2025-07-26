@@ -24,7 +24,7 @@ namespace bulkbuy.api.Models
         public required User Owner { get; set; }
 
         // Many-to-Many relationship with User (FK property)
-        public List<User> Contributors { get; set; }
+        public virtual List<User> Contributors { get; set; }
 
         [Required]
         public int TargetAmount { get; set; }

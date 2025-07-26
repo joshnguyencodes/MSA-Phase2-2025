@@ -16,10 +16,10 @@ namespace bulkbuy.api.Models
         public string? PasswordHash { get; set; }
 
         // Many to Many relationship with group membership
-        public ICollection<GroupMember> GroupsMember { get; set; } = new List<GroupMember>();
+        public virtual ICollection<GroupMember> GroupsMember { get; set; } = new List<GroupMember>();
 
         // Many to One relationship with orders
-        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
         // Empty constructor for EF Core
         public User() { }

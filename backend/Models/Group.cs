@@ -22,10 +22,10 @@ namespace bulkbuy.api.Models
         public User Owner { get; set; }
 
         // One to Many relationship with Orders
-        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
         // Many to Many relationship with group members
-        public Icollection<GroupMember> Members { get; set; } = new List<GroupMember>();
+        public virtual Icollection<GroupMember> Members { get; set; } = new List<GroupMember>();
 
         // Default Constructor for EF core
         public Group() { }
