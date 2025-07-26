@@ -19,7 +19,9 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 // Register repositories and services
 builder.Services.AddScoped<IUserRepository, UserRepository>(); 
-builder.Services.AddScoped<IAuthService, AuthService>(); 
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+builder.Services.AddScoped<IGroupService, GroupService>(); 
 
 builder.Services.AddCors(options =>
 {

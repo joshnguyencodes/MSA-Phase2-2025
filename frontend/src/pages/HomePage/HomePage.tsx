@@ -9,7 +9,7 @@ const HomePage = () => {
       <div className="buttons">
         <Link to="/login" className="button">Login</Link>
         <Link to="/register" className="button">Register</Link>
-        <Link to="/create-group" className="button">Create Group</Link>
+        <Link to="/groups/create" className="button">Create Group</Link>
         <Link to="/groups" className="button">Groups</Link>
         <Link to="/orders" className="button">Orders</Link>
         <Link to="/dashboard" className="button">Dashboard</Link>
