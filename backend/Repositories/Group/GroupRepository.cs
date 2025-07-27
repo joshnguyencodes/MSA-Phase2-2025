@@ -16,14 +16,14 @@ namespace bulkbuy.api.Repositories
         public async Task<Group?> GetByIdAsync(int id)
         {
             return await _context.Groups
-                .Include(g => g.Creator)
+                .Include(g => g.Owner)
                 .FirstOrDefaultAsync(g => g.Id == id);
         }
 
         public async Task<Group?> GetByIdWithMembersAsync(int id)
         {
             return await _context.Groups
-                .Include(g => g.Creator)
+                .Include(g => g.Owner)
                 .Include(g => g.Members)
                     .ThenInclude(m => m.User)
                 .Include(g => g.Orders)
@@ -33,7 +33,7 @@ namespace bulkbuy.api.Repositories
         public async Task<List<Group>> GetAllAsync()
         {
             return await _context.Groups
-                .Include(g => g.Creator)
+                .Include(g => g.Owner)
                 .Include(g => g.Members)
                 .OrderByDescending(g => g.CreatedAt)
                 .ToListAsync();
@@ -42,7 +42,7 @@ namespace bulkbuy.api.Repositories
         public async Task<List<Group>> GetUserGroupsAsync(int userId)
         {
             return await _context.Groups
-                .Include(g => g.Creator)
+                .Include(g => g.Owner)
                 .Include(g => g.Members)
                 .Where(g => g.Members.Any(m => m.UserId == userId))
                 .OrderByDescending(g => g.CreatedAt)
