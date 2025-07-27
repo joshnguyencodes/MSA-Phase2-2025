@@ -20,21 +20,21 @@ namespace bulkbuy.api.Services
 
         public async Task<AuthResult> RegisterUser(User user)
         {
-            var existingUser = await _userRepository.GetUserByUsername(user.Username);
+            var existingUser = await _userRepository.GetByUsernameAsync(user.Username);
             if (existingUser != null)
             {
                 return new AuthResult { Success = false, Message = "Username already exists." };
             }
 
-            user.PasswordHash = HashPassword(user.Password);
-            await _userRepository.AddUser(user);
+            user.PasswordHash = HashPassword(user.Password ?? "");
+            await _userRepository.CreateAsync(user);
 
             return new AuthResult { Success = true, Message = "User registered successfully." };
         }
 
         public async Task<AuthResult> LoginUser(LoginRequest loginRequest)
         {
-            var user = await _userRepository.GetUserByUsername(loginRequest.Username);
+            var user = await _userRepository.GetByUsernameAsync(loginRequest.Username);
             if (user == null || !VerifyPassword(loginRequest.Password, user.PasswordHash))
             {
                 return new AuthResult { Success = false, Message = "Invalid username or password." };

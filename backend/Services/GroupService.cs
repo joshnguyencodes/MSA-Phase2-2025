@@ -22,7 +22,7 @@ namespace bulkbuy.api.Services
                 Name = request.Name,
                 Description = request.Description,
                 Theme = request.Theme,
-                CreatorId = creatorId,
+                OwnerId = creatorId,
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -44,15 +44,15 @@ namespace bulkbuy.api.Services
 
             return new GroupResponse
             {
-                Id = groupWithCreator.Id,
+                Id = groupWithCreator!.Id,
                 Name = groupWithCreator.Name,
                 Description = groupWithCreator.Description,
                 Theme = groupWithCreator.Theme,
                 CreatedAt = groupWithCreator.CreatedAt,
                 Creator = new UserResponse
                 {
-                    Id = groupWithCreator.Creator.Id,
-                    Username = groupWithCreator.Creator.Username
+                    Id = groupWithCreator.Owner.Id,
+                    Username = groupWithCreator.Owner.Username
                 },
                 MemberCount = 1,
                 IsUserMember = true
@@ -76,8 +76,8 @@ namespace bulkbuy.api.Services
                     CreatedAt = group.CreatedAt,
                     Creator = new UserResponse
                     {
-                        Id = group.Creator.Id,
-                        Username = group.Creator.Username
+                        Id = group.Owner.Id,
+                        Username = group.Owner.Username
                     },
                     MemberCount = group.Members.Count,
                     IsUserMember = isUserMember
@@ -99,8 +99,8 @@ namespace bulkbuy.api.Services
                 CreatedAt = group.CreatedAt,
                 Creator = new UserResponse
                 {
-                    Id = group.Creator.Id,
-                    Username = group.Creator.Username
+                    Id = group.Owner.Id,
+                    Username = group.Owner.Username
                 },
                 MemberCount = group.Members.Count,
                 IsUserMember = true
@@ -124,12 +124,11 @@ namespace bulkbuy.api.Services
                 CreatedAt = group.CreatedAt,
                 Creator = new UserResponse
                 {
-                    Id = group.Creator.Id,
-                    Username = group.Creator.Username
+                    Id = group.Owner.Id,
+                    Username = group.Owner.Username
                 },
                 Members = group.Members.Select(m => new GroupMemberResponse
                 {
-                    Id = m.Id,
                     User = new UserResponse
                     {
                         Id = m.User.Id,
@@ -188,7 +187,7 @@ namespace bulkbuy.api.Services
         public async Task<bool> DeleteGroupAsync(int groupId, int userId)
         {
             var group = await _groupRepository.GetByIdAsync(groupId);
-            if (group == null || group.CreatorId != userId) return false;
+            if (group == null || group.OwnerId != userId) return false;
 
             await _groupRepository.DeleteAsync(groupId);
             return true;
