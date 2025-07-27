@@ -1,23 +1,25 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema; 
+
 namespace bulkbuy.api.Models
 {
     public class OrderContributor
     {
-
-        public int Id { get; set; }
-
         [Required]
         public int UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public User User { get; set; }
+        public virtual User User { get; set; } = null!;
 
         [Required]
         public int OrderId { get; set; }
 
         [ForeignKey("OrderId")]
-        public Order Order { get; set; }
-        
-        public int Amount { get; set; } = 0;
-        
+        public virtual Order Order { get; set; } = null!;
+
+        [Range(0.01, double.MaxValue)]
+        public decimal ContributionAmount { get; set; }
+
+        public DateTime ContributedAt { get; set; } = DateTime.UtcNow;
     }
 }

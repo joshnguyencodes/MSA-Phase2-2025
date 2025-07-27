@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema; 
+
 
 namespace bulkbuy.api.Models
 {
@@ -7,25 +9,30 @@ namespace bulkbuy.api.Models
         public int Id { get; set; }
 
         [Required]
-        public required string Name { get; set; }
+        [StringLength(100)]
+        public string Name { get; set; } = string.Empty;
+
+        [StringLength(500)]
+        public string? Description { get; set; }
 
         [Required]
-        public required string Description { get; set; }
+        [StringLength(100)]
+        public string Theme { get; set; } = string.Empty;
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        // Many to One relationships with User
+        // Many to One relationship with User (Owner)
         [Required]
-        public int OwnerID { get; set; }
+        public int OwnerId { get; set; }
 
         [ForeignKey("OwnerId")]
-        public User Owner { get; set; }
+        public virtual User Owner { get; set; } = null!;
 
         // One to Many relationship with Orders
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
         // Many to Many relationship with group members
-        public virtual Icollection<GroupMember> Members { get; set; } = new List<GroupMember>();
+        public virtual ICollection<GroupMember> Members { get; set; } = new List<GroupMember>();
 
         // Default Constructor for EF core
         public Group() { }
